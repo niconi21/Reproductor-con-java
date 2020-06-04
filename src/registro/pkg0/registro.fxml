@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6DBAA9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="registro.pkg0.RegistroController">
+   <children>
+      <Label layoutX="252.0" layoutY="27.0" text="Registro" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Label>
+      <JFXTextField fx:id="nombre" layoutX="97.0" layoutY="128.0" promptText="Nombre" />
+      <JFXTextField fx:id="apellidos" layoutX="97.0" layoutY="201.0" promptText="Apellidos" />
+      <JFXTextField fx:id="usuario" layoutX="325.0" layoutY="128.0" promptText="Usuario" />
+      <JFXPasswordField fx:id="contrasenia" layoutX="327.0" layoutY="200.0" prefHeight="27.0" prefWidth="155.0" promptText="Contraseña">
+         <font>
+            <Font name="Courier New Bold" size="14.0" />
+         </font>
+      </JFXPasswordField>
+      <JFXTextField fx:id="correo" layoutX="211.0" layoutY="254.0" prefHeight="26.0" prefWidth="155.0" promptText="Correo Electronico ">
+         <font>
+            <Font name="Courier New Bold" size="14.0" />
+         </font>
+      </JFXTextField>
+      <JFXButton layoutX="225.0" layoutY="313.0" onAction="#registro" text="Registrarse" textFill="#4b3590">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="48.0" fitWidth="52.0" layoutX="14.0" layoutY="14.0" onMouseClicked="#salir" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

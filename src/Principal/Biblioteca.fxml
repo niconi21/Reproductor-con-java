@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="504.0" prefWidth="733.0" style="-fx-background-color: #6DBAA9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Principal.BibliotecaController">
+   <children>
+      <AnchorPane focusTraversable="true" layoutX="6.0" layoutY="5.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.74" prefHeight="100.0" prefWidth="722.0" style="-fx-background-color: darkred; -fx-border-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <JFXButton fx:id="buttonDescargar" buttonType="RAISED" layoutX="629.0" layoutY="25.0" onAction="#descargar" prefHeight="26.0" prefWidth="63.0" style="-fx-background-radius: 360px;" text="  ">
+               <graphic>
+                  <ImageView fitHeight="48.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@006-download.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <ripplerFill>
+                  <LinearGradient endX="1.0" endY="0.46153846153846156" startX="0.34134615384615385" startY="0.3173076923076923">
+                     <stops>
+                        <Stop color="#a11f98" />
+                        <Stop color="#e7eb11" offset="0.4777777777777778" />
+                        <Stop color="#507a97" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </ripplerFill></JFXButton>
+            <JFXButton fx:id="buttonBuscar" layoutX="244.0" layoutY="23.0" onAction="#buscar" prefHeight="35.0" prefWidth="98.0" style="-fx-background-radius: 90px;" text="Buscar" textFill="#ddff0a">
+               <font>
+                  <Font name="System Bold" size="17.0" />
+               </font>
+            </JFXButton>
+            <JFXTextField fx:id="textFieldNombreCancion" labelFloat="true" layoutX="44.0" layoutY="29.0" promptText="Nombre de la canción">
+               <font>
+                  <Font name="Comic Sans MS" size="16.0" />
+               </font>
+               <unFocusColor>
+                  <LinearGradient endX="1.0" endY="0.34615384615384615" startX="0.25" startY="0.3317307692307693">
+                     <stops>
+                        <Stop color="BLACK" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </unFocusColor>
+               <focusColor>
+                  <RadialGradient centerX="0.47752808988764045" centerY="0.4326923076923077" radius="0.5">
+                     <stops>
+                        <Stop color="#14e452" />
+                        <Stop color="#2d719e" offset="0.39666666666666667" />
+                        <Stop color="#bae420" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </focusColor>
+            </JFXTextField>
+            <ImageView fx:id="imageViewLupa" fitHeight="26.0" fitWidth="23.0" layoutX="14.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@lupa.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="labelInformacion" layoutX="151.0" layoutY="27.0" prefHeight="38.0" prefWidth="345.0" text="Informacion del usuario" visible="false">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="buttonArtista" buttonType="RAISED" layoutX="342.0" layoutY="47.0" onAction="#ordenarArtista" prefHeight="28.0" prefWidth="83.0" text="Artista" textFill="#21d70d">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#b224a8" />
+                        <Stop color="#e4e80e" offset="0.4740740740740741" />
+                        <Stop color="#5b86a8" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton fx:id="buttonTitulo" buttonType="RAISED" layoutX="348.0" layoutY="15.0" onAction="#ordenarTitulo" prefHeight="26.0" prefWidth="72.0" text="Titulo" textFill="#08eb0b">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#ad1fa3" />
+                        <Stop color="#e7ee0c" offset="0.4740740740740741" />
+                        <Stop color="#608eb2" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+            <JFXButton fx:id="buttonGenero" layoutX="439.0" layoutY="13.0" onAction="#ordenarGenero" text="Genero" textFill="#51e80b">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font>
+               <ripplerFill>
+                  <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                     <stops>
+                        <Stop color="#a11f98" />
+                        <Stop color="#e7eb11" offset="0.4777777777777778" />
+                        <Stop color="#507a97" offset="1.0" />
+                     </stops>
+                  </RadialGradient>
+               </ripplerFill>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="5.0" layoutY="104.0" opacity="0.88" prefHeight="384.0" prefWidth="722.0" style="-fx-background-color: purple; -fx-border-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+         <children>
+            <AnchorPane focusTraversable="true" layoutX="-1.0" layoutY="292.0" nodeOrientation="LEFT_TO_RIGHT" opacity="0.71" prefHeight="90.0" prefWidth="737.0" style="-fx-background-color: darkred;" AnchorPane.rightAnchor="-1.0">
+               <children>
+                  <Label fx:id="labelCancionActual" alignment="BASELINE_LEFT" ellipsisString="" layoutX="7.0" layoutY="8.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="74.0" prefWidth="270.0" text="No ha seleccionado ninguna canción" textFill="WHITE" wrapText="true">
+                     <font>
+                        <Font name="System Bold Italic" size="13.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="buttonReproductir" buttonType="RAISED" layoutX="425.0" layoutY="16.0" onAction="#reproducir" prefHeight="58.0" prefWidth="46.0" style="-fx-background-radius: 90px;" text="  ">
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@010-play-button-1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#2da696" />
+                              <Stop color="#e50b7a" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonPausa" buttonType="RAISED" layoutX="504.0" layoutY="16.0" onAction="#pausa" prefHeight="48.0" prefWidth="48.0" style="-fx-background-radius: 90px;" text="  ">
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#642da6" />
+                              <Stop color="#f00a70" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@005-pause-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonSiguiente" buttonType="RAISED" layoutX="573.0" layoutY="17.0" onAction="#siguiente" style="-fx-background-radius: 90px;" text="   ">
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#712da6" />
+                              <Stop color="#a62d60" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                     <graphic>
+                        <ImageView fitHeight="48.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@001-fast-forward-button.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="buttonAtras" buttonType="RAISED" layoutX="645.0" layoutY="17.0" onAction="#atras" prefHeight="57.0" prefWidth="31.0" style="-fx-background-radius: 90px;" text="  ">
+                     <graphic>
+                        <ImageView fitHeight="47.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@hacia-atras.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                           <stops>
+                              <Stop color="#882da6" />
+                              <Stop color="#b54473" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXToggleButton fx:id="buttonAleatorio" layoutX="271.0" layoutY="16.0" prefHeight="60.0" prefWidth="163.0" text="Aleatorio" textFill="#53f20f">
+                     <toggleColor>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#0feed1" />
+                              <Stop color="#e7ecee" offset="0.4785185185185185" />
+                              <Stop color="#1d8cad" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </toggleColor>
+                     <font>
+                        <Font name="System Bold Italic" size="14.0" />
+                     </font>
+                  </JFXToggleButton>
+               </children>
+            </AnchorPane>
+            <TabPane blendMode="HARD_LIGHT" centerShape="false" nodeOrientation="LEFT_TO_RIGHT" opacity="0.94" prefHeight="291.0" prefWidth="737.0" side="BOTTOM" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabDescarga" onSelectionChanged="#descarga" text="Descarga">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="258.0" prefWidth="507.0">
+                           <children>
+                              <ScrollPane layoutX="16.0" layoutY="12.0" opacity="0.83" prefHeight="237.0" prefWidth="714.0" style="-fx-border-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="12.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="243.0" prefWidth="717.0">
+                                       <children>
+                                          <Pane layoutX="-3.0" opacity="0.56" prefHeight="232.0" prefWidth="717.0">
+                                             <children>
+                                                <ListView fx:id="listViewDescargas" prefHeight="234.0" prefWidth="714.0" />
+                                             </children></Pane>
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabMiMusica" onSelectionChanged="#miMusica" text="Mi Musica">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="334.0" prefWidth="475.0">
+                           <children>
+                           
+                              <JFXButton buttonType="RAISED" layoutX="651.0" layoutY="105.0" onAction="#aniadirPlaylist" prefHeight="74.0" prefWidth="72.0" style="-fx-background-color: yellow;" text="Añadir a una Playlist" wrapText="true">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="14.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                              </JFXButton>
+                              <ScrollPane layoutX="8.0" layoutY="8.0" opacity="0.83" prefHeight="243.0" prefWidth="629.0" style="-fx-border-color: black;">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="242.0" prefWidth="625.0">
+                                       <children>
+                                          <ListView fx:id="listViewMiMusica" prefHeight="246.0" prefWidth="623.0" />
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <JFXButton buttonType="RAISED" layoutX="645.0" layoutY="26.0" onAction="#aniadirFavoritos" prefHeight="58.0" prefWidth="78.0" style="-fx-background-color: yellow;" text="Añadir a Favoritos" wrapText="true">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="13.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                              </JFXButton>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabFavoritos" onSelectionChanged="#favoritos" text="Favoritos">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="14.0" layoutY="8.0" opacity="0.83" prefHeight="243.0" prefWidth="642.0" style="-fx-border-color: black;">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="646.0">
+                                       <children>
+                                          <ListView fx:id="listViewFavoritos" layoutX="-2.0" layoutY="-2.0" prefHeight="245.0" prefWidth="643.0" />
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <JFXButton buttonType="RAISED" layoutX="662.0" layoutY="71.0" onAction="#aniadirPlaylist" prefHeight="58.0" prefWidth="65.0" style="-fx-background-color: yellow;" text="Añadir a Playlist" wrapText="true" />
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabTopTec" onSelectionChanged="#topTec" text="Top Tec">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="14.0" layoutY="11.0" opacity="0.83" prefHeight="236.0" prefWidth="714.0" style="-fx-border-color: black;">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="237.0" prefWidth="697.0">
+                                       <children>
+                                          <ListView fx:id="listViewTopTec" prefHeight="241.0" prefWidth="704.0" />
+                                       </children>
+                                    </AnchorPane>
+                                </content>
+                              </ScrollPane>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabPlaylist" onSelectionChanged="#playlist" text="Playlist">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <ScrollPane layoutX="14.0" layoutY="63.0" opacity="0.83" prefHeight="242.0" prefWidth="621.0" style="-fx-border-color: black;" AnchorPane.bottomAnchor="8.0">
+                                <content>
+                                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="240.0" prefWidth="619.0">
+                                       <children>
+                                          <ListView fx:id="listViewPlayList" prefHeight="224.0" prefWidth="616.0" />
+                                       </children></AnchorPane>
+                                </content>
+                              </ScrollPane>
+                              <JFXButton buttonType="RAISED" layoutX="656.0" layoutY="23.0" onAction="#crearPlaylist" prefWidth="59.0" style="-fx-background-color: yellow;" text="Crear">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="14.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill></JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="646.0" layoutY="73.0" onAction="#eliminarPlaylist" style="-fx-background-color: yellow;" text="Eliminar">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="14.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill></JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="664.0" layoutY="121.0" onAction="#verPlaylist" style="-fx-background-color: yellow;" text="Ver">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="14.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                              </JFXButton>
+                              <JFXButton buttonType="RAISED" layoutX="637.0" layoutY="175.0" onAction="#reproducirPlaylist" style="-fx-background-color: yellow;" text="Reproducir">
+                                 <font>
+                                    <Font name="Courier New Bold Italic" size="14.0" />
+                                 </font>
+                                 <ripplerFill>
+                                    <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                                       <stops>
+                                          <Stop color="#18d01b" />
+                                          <Stop color="#089075" offset="1.0" />
+                                       </stops>
+                                    </RadialGradient>
+                                 </ripplerFill>
+                              </JFXButton>
+                           </children></AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabInformacion" onSelectionChanged="#cuenta" text="Cuenta">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label layoutX="200.0" layoutY="96.0" text="Usuario:">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="200.0" layoutY="132.0" prefHeight="46.0" prefWidth="114.0" text="Correo Electronico:" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelUsuario" layoutX="354.0" layoutY="90.0" prefHeight="33.0" prefWidth="256.0" text="--------------------------------------------" />
+                              <Label fx:id="labelCorreo" layoutX="346.0" layoutY="147.0" prefHeight="33.0" prefWidth="256.0" text="--------------------------------------------" />
+                              <ImageView fitHeight="51.0" fitWidth="51.0" layoutX="386.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@004-login-1.png" />
+                                 </image>
+                              </ImageView>
+                              <Label layoutX="200.0" layoutY="188.0" prefHeight="53.0" prefWidth="127.0" text="Nombre Completo:" wrapText="true">
+                                 <font>
+                                    <Font name="System Bold Italic" size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="labelnombre" layoutX="354.0" layoutY="215.0" prefHeight="16.0" prefWidth="208.0" text="--------------------------------------------" />
+                              <JFXButton layoutX="610.0" layoutY="14.0" onAction="#cerrarSesion" text="Cerrar Sesion" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TabPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

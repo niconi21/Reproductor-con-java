@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6DBAA9;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="recuperar_contraseña.RecuperarController">
+   <children>
+      <Pane layoutX="67.0" layoutY="82.0" opacity="0.18" prefHeight="270.0" prefWidth="485.0" style="-fx-background-color: black;" />
+      <Label layoutX="187.0" layoutY="29.0" text="Recuperar Contraseña">
+         <font>
+            <Font name="Tlwg Typist Bold" size="24.0" />
+         </font>
+      </Label>
+      <Line endX="-48.0" endY="183.0" layoutX="392.0" layoutY="151.0" startX="-48.0" startY="-50.0" />
+      <JFXTextField fx:id="usuario" layoutX="111.0" layoutY="168.0" promptText="Correo Electronico">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </JFXTextField>
+      <Label layoutX="381.0" layoutY="172.0" prefHeight="86.0" prefWidth="140.0" text="Se le mandará su contraseña via correo electronico" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="Verdana Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="139.0" layoutY="258.0" onAction="#recuperarCuenta" text="Recuperar" textFill="#03286b">
+         <font>
+            <Font name="Tlwg Mono Bold Oblique" size="18.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="48.0" fitWidth="56.0" layoutX="11.0" layoutY="7.0" onMouseClicked="#atras" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
